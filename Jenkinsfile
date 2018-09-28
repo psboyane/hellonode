@@ -23,13 +23,6 @@ node {
         }
     }
     
-    stage('SonarQube Analysis')
-   {
-      withSonarQubeEnv('sonar'){
-      sh '/home/docker sonar:sonar'
-      }
-   }
-
     stage('Push image') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
