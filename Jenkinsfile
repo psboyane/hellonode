@@ -26,7 +26,7 @@ node {
     stage('SonarQube Analysis')
    {
       withSonarQubeEnv('sonar'){
-      sh '/var/lib/jenkins/workspace sonar:sonar'
+      sh '/home/docker sonar:sonar'
       }
    }
 
