@@ -22,6 +22,13 @@ node {
             sh 'echo "Tests passed"'
         }
     }
+    
+    stage('SonarQube Analysis')
+   {
+      withSonarQubeEnv('sonar'){
+      sh '/var/lib/jenkins/workspace sonar:sonar'
+      }
+   }
 
     stage('Push image') {
         /* Finally, we'll push the image with two tags:
